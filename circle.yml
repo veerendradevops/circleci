@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: veerendradevops/circle-ci:v1
+    steps:
+      - checkout
+      - run: nginx
+      - run: nginx -v
+      - run: curl localhost:80 grep "Thank you for using nginx"
+      - run: ls -R ../circleci-dockerfiles

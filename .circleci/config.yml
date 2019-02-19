@@ -7,5 +7,5 @@ jobs:
       - checkout
       - run: nginx
       - run: nginx -v
-      - run: curl localhost:80 grep "Thank you for using nginx"
+      - run: curl localhost:80 | grep "Thank you for using nginx"
       - run: ls -R ../circleci-dockerfiles
